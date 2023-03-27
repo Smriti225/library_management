@@ -17,3 +17,15 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    
+
+
+# Create your models here.
+class Book(models.Model):
+    bookid=models.IntegerField(primary_key=True)
+    book_title=models.CharField(max_length=100)
+    book_Desc=models.TextField(max_length=500)
+    author_name=models.CharField(max_length=50)
+    published_date=models.DateField()
+    
+
