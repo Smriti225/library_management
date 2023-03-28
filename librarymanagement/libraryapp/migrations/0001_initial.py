@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.utils.timezone
-import libraryapp.manager
+
 
 
 class Migration(migrations.Migration):
@@ -38,8 +38,6 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'users',
                 'abstract': False,
             },
-            managers=[
-                ('objects', libraryapp.manager.UserManager()),
-            ],
+           
         ),
     ]
