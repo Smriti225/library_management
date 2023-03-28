@@ -6,7 +6,7 @@ from .models import Book
 class CustomUserAdmin(admin.ModelAdmin):
     list_display=['email','mobile','address','pincode','first_name','last_name']
 
-
+print('mahak')
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display=['bookid','book_title','book_Desc','author_name','published_date']
