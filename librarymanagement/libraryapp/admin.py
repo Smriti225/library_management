@@ -38,4 +38,4 @@ admin.site.register(CustomUser, CustomUserAdmin)
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display=['bookid','book_title','book_Desc','author_name','published_date']
+    list_display=['book_title','book_Desc','author_name','published_date']
