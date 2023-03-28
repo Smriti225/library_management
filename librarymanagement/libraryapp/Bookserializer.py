@@ -2,7 +2,18 @@ from .models import Book
 from rest_framework import serializers
 
 class BookSerializer(serializers.ModelSerializer):
+    book_title=serializers.CharField(max_length=70)
+    book_Desc=serializers.CharField(max_length=400)
+    author_name=serializers.CharField(max_length=50)
+    published_date=serializers.DateField(read_only=True)
     class Meta:
         model=Book
-        fields=['bookid','book_title','book_Desc','author_name','published_date']
+        fields='__all__'
+  
+
+    
+    
+
+
+    
 
