@@ -11,7 +11,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     address = models.CharField(max_length=50,null=True,blank=True)
     pincode = models.IntegerField()
     
-    objects=UserManager()
+    # objects=UserManager()
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
