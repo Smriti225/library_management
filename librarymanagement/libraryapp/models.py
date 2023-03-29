@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.db import models
-
+from .manager import UserManager
 class CustomUser(AbstractUser, PermissionsMixin):
     username = None
     email = models.EmailField(unique=True)
@@ -10,6 +10,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     address = models.CharField(max_length=50,null=True,blank=True)
     pincode = models.IntegerField(null=True,blank=True)
     
+    objects =UserManager()
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
@@ -21,7 +22,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
 # Create your models here.
 class Book(models.Model):
     book_title=models.CharField(max_length=100)
-    book_Desc=models.TextField(max_length=500)
+    book_Desc=models.CharField(max_length=500)
     author_name=models.CharField(max_length=50)
     published_date=models.DateField()
     

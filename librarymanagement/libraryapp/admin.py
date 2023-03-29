@@ -2,8 +2,6 @@ from django.contrib import admin
 from .models import CustomUser
 from .models import Book
 
-# Register your models here.
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
@@ -25,7 +23,7 @@ class CustomUserAdmin(UserAdmin):
         (None, {
             "classes": ("wide",),
             "fields": (
-                "username","email", "password1", "password2", "is_staff",
+                "email", "password1", "password2", "is_staff",
                 "is_active", "user_permissions","mobile","pincode","address"
             )}
         ),
@@ -34,7 +32,7 @@ class CustomUserAdmin(UserAdmin):
     ordering = ("email",)
 
 
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(CustomUser,CustomUserAdmin)
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
