@@ -22,13 +22,18 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
-router=DefaultRouter()
+# router=DefaultRouter()
 
-router.register('Books',views.Books,basename="Book")
-
+# router.register('viewbooks',views.Books,basename="Book")
+# router.register('books',views.Curdauth,basename="Book")
+router = DefaultRouter()
+router.register("curdauth",views.Curdauth,basename="books")
+router.register(r'books', views.Books, basename='books')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include(router.urls)),
+    # path('curdauth/', views.Curdauth.as_view()),
+    # path('curdauth/<int:id>', views.Curdauth.as_view()),
     path('gettoken/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refreshtoken/', TokenRefreshView.as_view(), name='token_refresh'),
     path('verifytoken/', TokenVerifyView.as_view(), name='token_Verify'),
