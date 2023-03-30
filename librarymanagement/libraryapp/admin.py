@@ -20,7 +20,7 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ("email", "is_staff", "is_active",)
     fieldsets = (
         ("Account Details", {"fields": ("email", "password")}),
-        ("Permissions", {"fields": ("is_staff", "is_active", "user_permissions")}),
+        ("Permissions", {"fields": ("is_staff", "is_active","is_superuser", "user_permissions")}),
         ("Profile Details", {"fields": ("mobile","pincode","address")}),
     )
     add_fieldsets = (
